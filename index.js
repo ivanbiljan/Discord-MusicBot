@@ -19,7 +19,7 @@ if (process.env.REPL_ID) {
 
 function selfPing() {
   https
-    .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY", (resp) => {
+    .get("https://music-bot-apz1.onrender.com", (resp) => {
       let data = "";
 
       // A chunk of data has been received.
@@ -29,7 +29,7 @@ function selfPing() {
 
       // The whole response has been received. Print out the result.
       resp.on("end", () => {
-        console.log(JSON.parse(data).explanation);
+        console.log("keep alive");
       });
     })
     .on("error", (err) => {
