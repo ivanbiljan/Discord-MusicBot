@@ -7,7 +7,7 @@ module.exports = {
   Token: process.env.Token || "", // Discord Bot Token
   ClientID: process.env.Discord_ClientID || "", // Discord Client ID
   ClientSecret: process.env.Discord_ClientSecret || "", // Discord Client Secret
-  Scopes: ["identify", "guilds", "applications.commands"], // Discord OAuth2 Scopes
+  Scopes: ["bot", "applications.commands"], // Discord OAuth2 Scopes
   ServerDeafen: true, // If you want bot to stay deafened
   DefaultVolume: 100, // Sets the default volume of the bot, You can change this number anywhere from 1 to 9007199254740991 (JS Integer limit. If you do set it to that, you're a monster.)
   CallbackURL: "/api/callback", // Discord API Callback url. Do not touch it if you don't know what you are doing. All you need to change for website to work is on line 20.
@@ -30,10 +30,10 @@ module.exports = {
   // Lavalink server; public lavalink -> https://lavalink-list.darrennathanael.com/; create one yourself -> https://darrennathanael.com/post/how-to-lavalink
   Lavalink: {
     id: "Main", //- Used for indentifier. You can set this to whatever you want.
-    host: "", //- The host name or IP of the lavalink server.
-    port: 80, // The port that lavalink is listening to. This must be a number!
-    pass: "", //- The password of the lavalink server.
-    secure: false, // Set this to true if the lavalink uses SSL. if not set it to false.
+    host: process.env.LavalinkHost || "lavalink.oops.wtf", //- The host name or IP of the lavalink server.
+    port: process.env.LavalinkPorst || 443, // The port that lavalink is listening to. This must be a number!
+    pass: process.env.LavalinkPassword || "www.freelavalink.ga", //- The password of the lavalink server.
+    secure: process.env.LavalinkSsl || true, // Set this to true if the lavalink uses SSL. if not set it to false.
     retryAmount: 200, //- The amount of times to retry connecting to the node if connection got dropped.
     retryDelay: 40, //- Delay between reconnect attempts if connection is lost.
   },
