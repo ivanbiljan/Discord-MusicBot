@@ -16,6 +16,11 @@ if (process.env.REPL_ID) {
   });
 }
 
+function selfPing() {
+  setTimeout(selfPing, 600000);
+}
+
+selfPing();
 client.build();
 
 module.exports = client; //;-;
