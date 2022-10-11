@@ -17,10 +17,13 @@ if (process.env.REPL_ID) {
 }
 
 function selfPing() {
-  setTimeout(selfPing, 600000);
+  setTimeout(selfPing, 10000);
+  fetch("https://google.com");
+  fetch("https://music-bot-apz1.onrender.com");
 }
 
 selfPing();
+
 client.build();
 
 module.exports = client; //;-;
